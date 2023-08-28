@@ -29,3 +29,9 @@ map("n", "<C-w>", "<cmd>q<cr>", { desc = "q" })
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("x", "<leader>p", [["_dP]])
+
+-- tmux
+map("n", "<c-h>", ":TmuxNavigateLeft<cr>", { silent = true, noremap = true })
+map("n", "<c-l>", ":TmuxNavigateRight<cr>", { silent = true, noremap = true })
+map("n", "<c-j>", ":TmuxNavigateDown<cr>", { silent = true, noremap = true })
+map("n", "<c-k>", ":TmuxNavigateUp<cr>", { silent = true, noremap = true })
