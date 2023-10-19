@@ -25,4 +25,11 @@ source <(ng completion script)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#a
+alias ls="lsd"
+alias l="ls -lah"
+alias ll="ls -la"
+alias gs="git status"
+alias gc="git commit -a -m"
+alias gp="git push"
+alias tree="lsd --tree"
+alias nv="nvim"

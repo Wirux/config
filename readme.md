@@ -5,3 +5,6 @@
 - home
 
 # config from home, have to be linked into $HOME dir
+
+# brew install
+ - brew install reattach-to-user-namespace
