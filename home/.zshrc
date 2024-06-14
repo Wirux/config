@@ -46,6 +46,7 @@ alias gp="git push"
 # rest
 alias nv="nvim"
 alias cat="bat"
-
+alias c="z"
+alias cd="z"
 ## DIRs
 export REPO="$HOME/Documents/repos"
