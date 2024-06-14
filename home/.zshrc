@@ -33,6 +33,11 @@ source <(fzf --zsh)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+fnv() {
+  local find="$1"
+    fd  "$find" | fzf | xargs nvim
+}
+
 ## ALIASES
 # ls to lds
 alias ls="lsd"
@@ -45,6 +50,7 @@ alias gc="git commit -a -m"
 alias gp="git push"
 # rest
 alias nv="nvim"
+alias xnv="xargs nvim"
 alias cat="bat"
 alias c="z"
 alias cd="z"
