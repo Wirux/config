@@ -13,12 +13,17 @@ source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
 ## ZSH PLUGINS
 plugins=( 
 	git
-	zsh-autosuggestions
   terraform
 )
 
 source /Users/adamwilczek/.docker/init-zsh.sh || true # Added by Docker Desktop
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
+# ZSH autosyntax
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## APPLICATIONS
 # init zoxide (cd->z)
@@ -30,13 +35,21 @@ source <(fzf --zsh)
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+# find file and run nvim on it
 fnv() {
   local find="$1"
     fd  "$find" | fzf | xargs nvim
 }
+
+## BINDINGS
+# autosuggest
+bindkey 'ą' autosuggest-accept
+bindkey '^I'   complete-word 
+bindkey '^I^I' autosuggest-accept
+# vim motion in shell
+# bindkey -v
 
 ## ALIASES
 # ls to lds
@@ -50,9 +63,8 @@ alias gc="git commit -a -m"
 alias gp="git push"
 # rest
 alias nv="nvim"
-alias xnv="xargs nvim"
 alias cat="bat"
-alias c="z"
 alias cd="z"
 ## DIRs
 export REPO="$HOME/Documents/repos"
+
