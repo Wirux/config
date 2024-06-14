@@ -4,7 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-#set language
+# Set language
 export LANG=en_US.UTF-8
 
 source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
@@ -21,42 +21,27 @@ plugins=(
 source /Users/adamwilczek/.docker/init-zsh.sh || true # Added by Docker Desktop
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# ZSH autosyntax
+## ZSH AUTOSUGGEST TOOLS
+# Init
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+#config
+ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
+setopt complete_aliases
+
+# load compinit
 autoload -U +X bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
-# autoload -U compinit; compinit
+
+# Addons
 source ~/.zsh/autocompletion_addons/az.completion
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 source <(kubectl completion zsh)
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
-setopt complete_aliases
 
-#--
-# zstyle ':autocomplete:*history*:*' insert-unambiguous yes
-# Set fzf history sorter
-# zstyle ':completion:*' menu select=2
-#
-# # Use history for completion
-# zstyle ':completion:*' use-cache on
-# zstyle ':completion:*' cache-path ~/.zsh/cache
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-# zstyle ':completion:*:descriptions' format '%B%d%b'
-# zstyle ':completion:*:messages' format '%d'
-# zstyle ':completion:*:warnings' format 'No matches for: %d'
-# zstyle ':completion:*' group-name ''
-# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-# zstyle ':completion:*:default' menu select=1
-# zstyle ':completion:*' sort true
-
-# Ensure zsh-autosuggestions uses history strategy
-# ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-#--
 ## APPLICATIONS
 # init zoxide (cd->z)
 eval "$(zoxide init zsh)"
@@ -100,6 +85,3 @@ alias cd="z"
 alias k="kubectl"
 ## DIRs
 export REPO="$HOME/Documents/repos"
-#
-# compdef k='kubectl'
-# compdef cd='z'
