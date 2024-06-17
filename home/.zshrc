@@ -62,7 +62,7 @@ setopt appendhistory
 # find file and run nvim on it
 fnv() {
   local find="$1"
-    fd --hidden --exclude .git  "$find" | fzf | xargs nvim
+    fd --hidden --exclude .git  "$find" | fzf --preview='bat {}' | xargs nvim
 }
 
 ## BINDINGS
