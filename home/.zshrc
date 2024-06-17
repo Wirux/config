@@ -46,8 +46,13 @@ source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 # init zoxide (cd->z)
 eval "$(zoxide init zsh)"
 
-# init fzf 
+# init fzf history
 source <(fzf --zsh)
+#history config
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
@@ -62,9 +67,12 @@ fnv() {
 
 ## BINDINGS
 # autosuggest
-bindkey 'ą' autosuggest-accept
+# Set <tab> as word complete and double <tab> as history auto
 bindkey '^I'   complete-word 
 bindkey '^I^I' autosuggest-accept
+# Make arrow keys always move the cursor on the command line
+bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
+bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 # vim motion in shell
 # bindkey -v
 
@@ -85,3 +93,11 @@ alias cd="z"
 alias k="kubectl"
 ## DIRs
 export REPO="$HOME/Documents/repos"
+
+# ruby
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
+
+
