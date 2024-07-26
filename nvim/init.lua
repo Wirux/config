@@ -7,3 +7,6 @@ require("config.lazy")
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 -- vim.opt.scrolloff = 10
+-- custom config
+vim.api.nvim_exec("language en_US", true)
+vim.cmd.colorscheme("catppuccin-mocha")

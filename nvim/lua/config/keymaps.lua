@@ -22,8 +22,8 @@ end
 map("n", "<C-\\>", "<cmd>vsplit<cr>", { desc = "vsplit" })
 map("n", "<C-_>", "<cmd>split<cr>", { desc = "hsplit" })
 map("n", "<C-w>", "<cmd>q<cr>", { desc = "q" })
-map("n", "<C-}>", "<cmd>bprevious<cr>", { desc = "bprevious" })
-map("n", "<C-]>", "<cmd>bnext<cr>", { desc = "bnext" })
+-- map("n", "<C-}>", "<cmd>bprevious<cr>", { desc = "bprevious" })
+-- map("n", "<C-]>", "<cmd>bnext<cr>", { desc = "bnext" })
 map("n", "<C-w>", "<cmd>q<cr>", { desc = "q" })
 
 map("v", "J", ":m '>+1<CR>gv=gv")
@@ -35,3 +35,6 @@ map("n", "<c-h>", ":TmuxNavigateLeft<cr>", { silent = true, noremap = true })
 map("n", "<c-l>", ":TmuxNavigateRight<cr>", { silent = true, noremap = true })
 map("n", "<c-j>", ":TmuxNavigateDown<cr>", { silent = true, noremap = true })
 map("n", "<c-k>", ":TmuxNavigateUp<cr>", { silent = true, noremap = true })
+
+-- markdown
+map("n", "<c-p>", ":MarkdownPreviewToggle<cr>", { desc = "Toggle Markdown Preview" })

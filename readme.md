@@ -8,3 +8,11 @@
 
 # brew install
  - brew install reattach-to-user-namespace
+
+# core applications
+- zoxide
+- bat
+- ripgrep
+- fd
+- fzf
+
