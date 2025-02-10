@@ -7,3 +7,4 @@ foo.*
 *.log
 data
 *lock*
+.DS_Store

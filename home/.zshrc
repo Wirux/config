@@ -16,6 +16,10 @@ source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
 plugins=( 
 	git
   terraform
+  macos
+  ruby
+  rails
+  bundler
 )
 
 source /Users/adamwilczek/.docker/init-zsh.sh || true # Added by Docker Desktop
@@ -26,6 +30,9 @@ source /Users/adamwilczek/.docker/init-zsh.sh || true # Added by Docker Desktop
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# load api keys
+source "$HOME/.config/.api_keys" 
 
 #config
 ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
@@ -86,6 +93,7 @@ alias tree="lsd --tree"
 alias gs="git status"
 alias gc="git commit -a -m"
 alias gp="git push"
+alias ga="git add ."
 # rest
 alias nv="nvim"
 alias cat="bat"
@@ -100,4 +108,19 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
+#pyenv
+alias python="$(pyenv which python)"
+alias pip="$(pyenv which pip)"
 
+# OCI
+export OCI_CLI_AUTH=security_token
+
+# Direnv
+eval "$(direnv hook zsh)"
+
+# bun completions
+[ -s "/Users/adamwilczek/.bun/_bun" ] && source "/Users/adamwilczek/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
