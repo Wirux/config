@@ -7,8 +7,7 @@ fi
 # Set language
 export LANG=en_US.UTF-8
 
-source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
-
+source "$(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -124,3 +123,6 @@ eval "$(direnv hook zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+#duckdb
+export PATH='/Users/adamwilczek/.duckdb/cli/latest':$PATH
