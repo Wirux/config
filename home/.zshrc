@@ -124,5 +124,8 @@ eval "$(direnv hook zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-#duckdb
+# duckdb
 export PATH='/Users/adamwilczek/.duckdb/cli/latest':$PATH
+
+# secrets
+source $HOME/.secretsrc
