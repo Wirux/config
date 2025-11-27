@@ -111,9 +111,6 @@ fi
 alias python="$(pyenv which python)"
 alias pip="$(pyenv which pip)"
 
-# OCI
-export OCI_CLI_AUTH=security_token
-
 # Direnv
 eval "$(direnv hook zsh)"
 
