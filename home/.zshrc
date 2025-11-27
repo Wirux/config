@@ -7,8 +7,7 @@ fi
 # Set language
 export LANG=en_US.UTF-8
 
-source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
-
+source "$(brew --prefix)/opt/powerlevel10k/share/powerlevel10k/powerlevel10k.zsh-theme"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -16,6 +15,10 @@ source "$(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme"
 plugins=( 
 	git
   terraform
+  macos
+  ruby
+  rails
+  bundler
 )
 
 source /Users/adamwilczek/.docker/init-zsh.sh || true # Added by Docker Desktop
@@ -26,6 +29,9 @@ source /Users/adamwilczek/.docker/init-zsh.sh || true # Added by Docker Desktop
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# load api keys
+source "$HOME/.config/.api_keys" 
 
 #config
 ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
@@ -86,8 +92,10 @@ alias tree="lsd --tree"
 alias gs="git status"
 alias gc="git commit -a -m"
 alias gp="git push"
+alias ga="git add ."
 # rest
 alias nv="nvim"
+alias v="nvim"
 alias cat="bat"
 alias cd="z"
 alias k="kubectl"
@@ -100,4 +108,22 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 
+#pyenv
+alias python="$(pyenv which python)"
+alias pip="$(pyenv which pip)"
 
+# Direnv
+eval "$(direnv hook zsh)"
+
+# bun completions
+[ -s "/Users/adamwilczek/.bun/_bun" ] && source "/Users/adamwilczek/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# duckdb
+export PATH='/Users/adamwilczek/.duckdb/cli/latest':$PATH
+
+# secrets
+source $HOME/.secretsrc
