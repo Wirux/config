@@ -37,4 +37,6 @@ map("n", "<c-j>", ":TmuxNavigateDown<cr>", { silent = true, noremap = true })
 map("n", "<c-k>", ":TmuxNavigateUp<cr>", { silent = true, noremap = true })
 
 -- markdown
-map("n", "<c-p>", ":MarkdownPreviewToggle<cr>", { desc = "Toggle Markdown Preview" })
+map("n", "<leader>m", ":MarkdownPreviewToggle<cr>", { desc = "Toggle Markdown Preview" })
+
+vim.opt.iskeyword:append("-")
