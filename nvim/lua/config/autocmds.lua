@@ -10,3 +10,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   pattern = { "terraform", "hcl" },
 })
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "snacks_dashboard",
+--   callback = function(event)
+--     vim.schedule(function()
+--       vim.keymap.set("n", "s", "<nop>", { buffer = event.buf, silent = true })
+--       vim.keymap.set("n", "S", "<nop>", { buffer = event.buf, silent = true })
+--     end)
+--   end,
+-- })
