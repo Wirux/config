@@ -95,7 +95,7 @@ alias gp="git push"
 alias ga="git add ."
 # rest
 alias nv="nvim"
-alias v="nvim"
+alias n="nvim"
 alias cat="bat"
 alias cd="z"
 alias k="kubectl"
