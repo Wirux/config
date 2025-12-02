@@ -2,8 +2,8 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim", -- wymagana biblioteka
-      "nvim-lua/popup.nvim", -- opcjonalna, do niektórych pickerów
+      "nvim-lua/plenary.nvim",
+      "nvim-lua/popup.nvim",
     },
     config = function()
       local telescope = require("telescope")
@@ -14,7 +14,6 @@ return {
           path_display = { "smart" },
         },
       })
-      -- Wczytanie rozszerzenia yank_history (po zainstalowaniu yanky.nvim)
       pcall(telescope.load_extension, "yank_history")
     end,
   },
