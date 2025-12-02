@@ -31,11 +31,12 @@ source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # load api keys
-source "$HOME/.config/.api_keys" 
+# source "$HOME/.config/.api_keys" 
 
 #config
 ZSH_AUTOSUGGEST_STRATEGY=(history completion) 
 setopt complete_aliases
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # load compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -107,6 +108,11 @@ if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
+
+# opencode
+# alias oc="$(opencode)" 
+# alias o="$(opencode)" 
+#
 
 #pyenv
 alias python="$(pyenv which python)"
