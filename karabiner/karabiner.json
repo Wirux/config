@@ -18,6 +18,33 @@
                 },
                 "rules": [
                     {
+                        "description": "Remap ESC to Option-ESC in Safari only",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com.apple.Safari$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape",
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Caps Lock if alone)",
                         "manipulators": [
                             {
@@ -37,33 +64,6 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Remap ESC to Option-ESC in Safari only",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.apple.Safari"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "escape"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "escape",
-                                        "modifiers": [
-                                            "left_option"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -194,7 +194,7 @@
                         "product_id": 10203,
                         "vendor_id": 5824
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "mouse_flip_horizontal_wheel": false,
                     "mouse_flip_vertical_wheel": false,

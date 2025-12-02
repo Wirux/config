@@ -4,6 +4,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-lua/popup.nvim",
+      "debugloop/telescope-undo.nvim",
     },
     config = function()
       local telescope = require("telescope")
@@ -12,6 +13,15 @@ return {
           prompt_prefix = "🔍 ",
           selection_caret = " ",
           path_display = { "smart" },
+        },
+        extensions = {
+          undo = {
+            side_by_side = true,
+            layout_strategy = "vertical",
+            layout_config = {
+              preview_height = 0.8,
+            },
+          },
         },
       })
       pcall(telescope.load_extension, "yank_history")
