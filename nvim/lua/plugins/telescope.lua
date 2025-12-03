@@ -6,6 +6,9 @@ return {
       "nvim-lua/popup.nvim",
       "debugloop/telescope-undo.nvim",
     },
+    keys = {
+      { "<C-u>", "<cmd>Telescope undo<cr>", desc = "Telescope Undo" },
+    },
     config = function()
       local telescope = require("telescope")
       telescope.setup({

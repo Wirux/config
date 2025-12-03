@@ -29,10 +29,7 @@ map("n", "<C-w>", "<cmd>q<cr>", { desc = "q" })
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("x", "<leader>p", [["_dP]])
-map("n", "<C-u>", "<cmd>Telescope undo<cr>", { desc = "Telescope Undo" })
 map("n", "<r>", "<cmd>redo<cr>")
 
--- markdown
-map("n", "<leader>m", ":MarkdownPreviewToggle<cr>", { desc = "Toggle Markdown Preview" })
 
 vim.opt.iskeyword:append("-")
