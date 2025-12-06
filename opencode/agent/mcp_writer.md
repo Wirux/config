@@ -5,9 +5,9 @@ tools:
   obsidian-mcp-server: true
 ---
 # Context
-  - obsidian-mcp-server/meta/opencode/mcp_entry.md
-  - obsidian-mcp-server/meta/opencode/mcp_output.md
-  - obsidian-mcp-server/meta/opencode/mcp_sanitization_rules.md
+  - obsidian-mcp-server/meta/mcp_entry.md
+  - obsidian-mcp-server/meta/mcp_output.md
+  - obsidian-mcp-server/meta/mcp_sanitization_rules.md
 
 # Bootstrap Protocol
 
