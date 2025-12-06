@@ -5,7 +5,7 @@
 !iterm2/config/
 !karabiner/
 !nvim/
-!opencode/
+!opencode/**
 !tmux/
 !raycast/export_config/
 */readme.md
