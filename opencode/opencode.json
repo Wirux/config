@@ -8,7 +8,7 @@
       "command": ["npx", "-y", "obsidian-semantic-mcp"],
       "enabled": true,
       "environment": {
-        "OBSIDIAN_API_KEY": "{file:~/.secrets/obsidian_api_key}",
+        "OBSIDIAN_API_KEY": "{env:OBSIDIAN_API_KEY}",
         "OBSIDIAN_BASE_URL": "http://127.0.0.1:27123",
         "OBSIDIAN_VERIFY_SSL": "false",
         "OBSIDIAN_ENABLE_CACHE": "true"
