@@ -1,20 +1,14 @@
-# Ignoruj wszystko
-/*
-
-# Odblokuj plik ignore
+*
 !/.gitignore
-
-# Odblokuj konkretne katalogi (wa?ny jest slash na ko?cu)
 !/home/
 !/iterm2/
 !/karabiner/
 !/nvim/
 !/opencode/
 !/tmux/
-
-# Wewn?trz tych katalog—w Git b?dzie ju? ?ledzi? wszystko,
-# chyba ?e zablokujesz co? specyficznego poni?ej:
-
-# ?mieci do ignorowania (globalnie)
-.DS_Store
+!/raycast/
+*/readme.md
+tt.*
 *.log
+*lock*
+.DS_Store
